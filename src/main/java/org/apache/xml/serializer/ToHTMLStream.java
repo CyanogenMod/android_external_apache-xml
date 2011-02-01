@@ -25,8 +25,6 @@ import java.util.Properties;
 
 import javax.xml.transform.Result;
 
-import libcore.base.EmptyArray;
-
 import org.apache.xml.serializer.utils.MsgKey;
 import org.apache.xml.serializer.utils.Utils;
 import org.xml.sax.Attributes;
@@ -2056,7 +2054,7 @@ public class ToHTMLStream extends ToStream
         final Node m_Root;
 
         /** helper buffer to convert Strings to char arrays */
-        private char[] m_charBuffer = EmptyArray.CHAR;
+        private char[] m_charBuffer = new char[0];
 
         /** true if the search for an object is lower case only with the key */
         private final boolean m_lowerCaseOnly;
