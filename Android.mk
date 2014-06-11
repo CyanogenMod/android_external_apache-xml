@@ -27,13 +27,11 @@ LOCAL_NO_STANDARD_LIBRARIES := true
 LOCAL_JAVA_RESOURCE_DIRS := src/main/java
 include $(BUILD_JAVA_LIBRARY)
 
-ifeq ($(WITH_HOST_DALVIK),true)
-    include $(CLEAR_VARS)
-    LOCAL_MODULE := apache-xml-hostdex
-    LOCAL_MODULE_TAGS := optional
-    LOCAL_SRC_FILES := $(apache-xml_src_files)
-    LOCAL_JAVACFLAGS := -encoding UTF-8
-    LOCAL_MODULE_TAGS := optional
-    LOCAL_JAVA_RESOURCE_DIRS := src/main/java
-    include $(BUILD_HOST_DALVIK_JAVA_LIBRARY)
-endif
+include $(CLEAR_VARS)
+LOCAL_MODULE := apache-xml-hostdex
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := $(apache-xml_src_files)
+LOCAL_JAVACFLAGS := -encoding UTF-8
+LOCAL_MODULE_TAGS := optional
+LOCAL_JAVA_RESOURCE_DIRS := src/main/java
+include $(BUILD_HOST_DALVIK_JAVA_LIBRARY)
